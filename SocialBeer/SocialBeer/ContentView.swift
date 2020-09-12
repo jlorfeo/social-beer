@@ -6,15 +6,16 @@
 //  Copyright © 2020 Lorfeo, Jan-Erik. All rights reserved.
 //
 
+import SDWebImageSwiftUI
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        BeerList()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentViewPreviews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
