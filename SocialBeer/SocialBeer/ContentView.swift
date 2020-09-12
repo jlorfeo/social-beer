@@ -10,13 +10,8 @@ import SDWebImageSwiftUI
 import SwiftUI
 
 struct ContentView: View {
+    var viewModel: BeerListViewModel
     var body: some View {
-        BeerList()
-    }
-}
-
-struct ContentViewPreviews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        BeerList(viewModel: viewModel)
     }
 }

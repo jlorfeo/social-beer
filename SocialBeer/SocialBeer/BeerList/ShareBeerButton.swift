@@ -12,7 +12,7 @@ struct ShareBeerButton: View {
     var action: () -> Void
     var body: some View {
         Button(action: {
-            action()
+            self.action()
         }, label: {
             HStack {
                 Text("Lets beer together!")
