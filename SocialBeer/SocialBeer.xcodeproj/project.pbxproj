@@ -23,6 +23,11 @@
 		50EB7E2E250CD71900AB4F1B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E2D250CD71900AB4F1B /* ActivityView.swift */; };
 		50EB7E30250CD94400AB4F1B /* ShareBeerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E2F250CD94400AB4F1B /* ShareBeerButton.swift */; };
 		50EB7E32250CD98600AB4F1B /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E31250CD98600AB4F1B /* DescriptionCell.swift */; };
+		50EB7E36250CDB5E00AB4F1B /* BeerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E35250CDB5E00AB4F1B /* BeerListViewModel.swift */; };
+		50EB7E38250CDC4F00AB4F1B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E37250CDC4F00AB4F1B /* SearchBar.swift */; };
+		50EB7E3A250CE86E00AB4F1B /* BeerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E39250CE86E00AB4F1B /* BeerService.swift */; };
+		50EB7E3C250CE87A00AB4F1B /* BeerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E3B250CE87A00AB4F1B /* BeerRepository.swift */; };
+		50EB7E3E250CE89500AB4F1B /* APIDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E3D250CE89500AB4F1B /* APIDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		50EB7E2D250CD71900AB4F1B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		50EB7E2F250CD94400AB4F1B /* ShareBeerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareBeerButton.swift; sourceTree = "<group>"; };
 		50EB7E31250CD98600AB4F1B /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		50EB7E35250CDB5E00AB4F1B /* BeerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewModel.swift; sourceTree = "<group>"; };
+		50EB7E37250CDC4F00AB4F1B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		50EB7E39250CE86E00AB4F1B /* BeerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerService.swift; sourceTree = "<group>"; };
+		50EB7E3B250CE87A00AB4F1B /* BeerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRepository.swift; sourceTree = "<group>"; };
+		50EB7E3D250CE89500AB4F1B /* APIDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,7 @@
 				500E7F8C250AB1AB009524A2 /* LaunchScreen.storyboard */,
 				500E7F8F250AB1AB009524A2 /* Info.plist */,
 				500E7F89250AB1AB009524A2 /* Preview Content */,
+				50EB7E3D250CE89500AB4F1B /* APIDescription.swift */,
 			);
 			path = SocialBeer;
 			sourceTree = "<group>";
@@ -162,6 +173,8 @@
 				50EB7E26250CA0DA00AB4F1B /* BeerList.swift */,
 				50EB7E28250CA19100AB4F1B /* BeerDetails.swift */,
 				50EB7E2F250CD94400AB4F1B /* ShareBeerButton.swift */,
+				50EB7E39250CE86E00AB4F1B /* BeerService.swift */,
+				50EB7E3B250CE87A00AB4F1B /* BeerRepository.swift */,
 			);
 			path = BeerList;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 				50EB7E2B250CA21E00AB4F1B /* CircledImage.swift */,
 				50EB7E2D250CD71900AB4F1B /* ActivityView.swift */,
 				50EB7E31250CD98600AB4F1B /* DescriptionCell.swift */,
+				50EB7E37250CDC4F00AB4F1B /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +193,7 @@
 		50EB7E33250CD9ED00AB4F1B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				50EB7E35250CDB5E00AB4F1B /* BeerListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 500E7FA8250AB1AC009524A2 /* Build configuration list for PBXNativeTarget "SocialBeer" */;
 			buildPhases = (
+				50EB7E34250CDB1900AB4F1B /* SwiftLint Autocorrect */,
 				5056DDCE250AB41C009A09C8 /* SwiftLint */,
 				500E7F7A250AB1AA009524A2 /* Sources */,
 				500E7F7B250AB1AA009524A2 /* Frameworks */,
@@ -335,6 +351,24 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"${CONFIGURATION}\" = \"Debug\" ]; then\nif which swiftlint >/dev/null; then\nswiftlint --config \"$SRCROOT/.swiftlint.yml\"\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\nfi\n";
 		};
+		50EB7E34250CDB1900AB4F1B /* SwiftLint Autocorrect */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Autocorrect";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftlint autocorrect\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -346,11 +380,16 @@
 				500E7F82250AB1AA009524A2 /* AppDelegate.swift in Sources */,
 				50EB7E2C250CA21E00AB4F1B /* CircledImage.swift in Sources */,
 				500E7F84250AB1AA009524A2 /* SceneDelegate.swift in Sources */,
+				50EB7E3E250CE89500AB4F1B /* APIDescription.swift in Sources */,
+				50EB7E3A250CE86E00AB4F1B /* BeerService.swift in Sources */,
 				50EB7E32250CD98600AB4F1B /* DescriptionCell.swift in Sources */,
+				50EB7E38250CDC4F00AB4F1B /* SearchBar.swift in Sources */,
 				50EB7E27250CA0DA00AB4F1B /* BeerList.swift in Sources */,
 				500E7F86250AB1AA009524A2 /* ContentView.swift in Sources */,
 				50EB7E2E250CD71900AB4F1B /* ActivityView.swift in Sources */,
 				50EB7E29250CA19100AB4F1B /* BeerDetails.swift in Sources */,
+				50EB7E3C250CE87A00AB4F1B /* BeerRepository.swift in Sources */,
+				50EB7E36250CDB5E00AB4F1B /* BeerListViewModel.swift in Sources */,
 				50EB7E25250C9F5100AB4F1B /* BeerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialBeer/Preview Content\"";
+				DEVELOPMENT_TEAM = GAF2SKU2HV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocialBeer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,6 +579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialBeer/Preview Content\"";
+				DEVELOPMENT_TEAM = GAF2SKU2HV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocialBeer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

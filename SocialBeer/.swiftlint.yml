@@ -3,6 +3,7 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - colon
   - comma
   - control_statement
+  - identifier_name
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # Find all the available rules by running: `swiftlint rules`
 
@@ -50,6 +51,8 @@ type_name:
 identifier_name:
   min_length: # only min_length
     error: 4 # only error
+  allowed_symbols:
+    "_"
   excluded: # excluded via string array
     - id
     - URL
