@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+class BeerFactory {
+    func viewModel() -> BeerListViewModel {
+        BeerListViewModel(
+            beerInteractor: interactor()
+        )
+    }
+
+    private func interactor() -> BeerService {
+        BeerService(repository: repository())
+    }
+
+    private func repository() -> BeerRepository {
+        BeerRepository(description: apiDescription())
+    }
+
+    private func apiDescription() -> APIDescription {
+        APIDescription(url: "https://api.punkapi.com/v2/beers")
+    }
+}
