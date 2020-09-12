@@ -16,14 +16,14 @@ struct CircledWebImage: View {
     var frame: Frame
 
     var body: some View {
-        WebImage(url: URL(string: "https://images.punkapi.com/v2/192.png"))
+        WebImage(url: URL(string: imageUrl))
             .renderingMode(.original)
             .resizable()
             .scaledToFit()
             .frame(width: frame.width, height: frame.height)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.init(red: 211, green: 211, blue: 211), lineWidth: 4))
-            .shadow(radius: 15)
+            .shadow(radius: 10)
     }
 }
 
