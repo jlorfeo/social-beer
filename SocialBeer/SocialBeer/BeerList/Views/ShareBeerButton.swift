@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct ShareBeerButton: View {
+    var label: String
     var action: () -> Void
     var body: some View {
         Button(action: {
             action()
         }, label: {
             HStack {
-                Text("Lets beer together!")
+                Text(label)
                     .fontWeight(.semibold)
             }
             .padding()

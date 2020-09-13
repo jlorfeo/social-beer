@@ -13,8 +13,11 @@ struct BeerCell: View {
     var beer: Beer
     var body: some View {
         HStack {
-            CircledWebImage(imageUrl: beer.image_url, frame: Frame(width: 75, height: 75))
-            VStack {
+            WebImage(url: URL(string: beer.image_url ))
+                .resizable()
+                .scaledToFit()
+                .frame(width: 75, height: 75, alignment: .center)
+            VStack(alignment: .leading) {
                 Text(beer.name)
                 Text("First Brewed: \(beer.first_brewed)")
                     .fontWeight(.light)
