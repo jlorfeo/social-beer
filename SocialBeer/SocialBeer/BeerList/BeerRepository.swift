@@ -54,6 +54,25 @@ class BeerRepository {
                     return element.data
             }
             .decode(type: Array<Beer>.self, decoder: JSONDecoder())
+            .mapError { error in
+                guard let decodingError = error as? DecodingError else {
+                    return error
+                }
+                switch decodingError {
+                case .dataCorrupted(let context):
+                    print(context.debugDescription)
+                case .keyNotFound(_, let context):
+                    print(context.debugDescription)
+                case .typeMismatch(_ , let context):
+                    print(context.debugDescription)
+                case .valueNotFound(_, let context):
+                    print(context.debugDescription)
+
+                default:
+                    return error
+                }
+                return error
+            }
             .eraseToAnyPublisher()
     }
 }

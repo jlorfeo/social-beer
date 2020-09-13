@@ -6,6 +6,7 @@
 //  Copyright © 2020 Lorfeo, Jan-Erik. All rights reserved.
 //
 
+import Combine
 import Foundation
 
 class BeerListViewModel: ObservableObject {
@@ -17,29 +18,7 @@ class BeerListViewModel: ObservableObject {
     init(beerInteractor: BeerInteractor) {
         self.beerInteractor = beerInteractor
         beerInteractor.beerPublisher
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    guard let error = error as? DecodingError else {
-                        return
-                    }
-                    switch error {
-                    case .dataCorrupted(let error):
-                        print(error.underlyingError)
-                    case .keyNotFound(_, let context):
-                        print(context.debugDescription)
-                    case .typeMismatch(_ , let context):
-                        print(context.debugDescription)
-                    case .valueNotFound(_, let context):
-                        print(context.debugDescription)
-
-                    default:
-                        return
-                    }
-                }
-            }, receiveValue: { beers in
+            .sink(receiveValue: { beers in
                 self.beers.append(contentsOf: beers)
             })
             .store(in: &subscriptions)
