@@ -21,9 +21,10 @@ struct BeerList: View {
                         .fontWeight(.semibold)
                         .font(.largeTitle)
                         .foregroundColor(.gray)
-                        .shadow(radius: 5)
+                        .shadow(radius: 3)
                 } else {
                     SearchBar(text: $searchText, placeholder: "Find your beer!")
+                    // MARK: - List of beers
                     List {
                         ForEach(self.viewModel.beers.filter {
                             self.searchText.isEmpty
@@ -44,7 +45,7 @@ struct BeerList: View {
                 }
             }
             .navigationBarTitle("Social Beer")
-            // Needed for correct presentation on iPads
+            // Needed for correct presentation on iPads in Landscape Mode
             .phoneOnlyStackNavigationView()
         }
         .onAppear(perform: {
