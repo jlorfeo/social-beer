@@ -15,6 +15,7 @@
 		500E7F8E250AB1AB009524A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500E7F8C250AB1AB009524A2 /* LaunchScreen.storyboard */; };
 		500E7F99250AB1AC009524A2 /* SocialBeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E7F98250AB1AC009524A2 /* SocialBeerTests.swift */; };
 		500E7FA4250AB1AC009524A2 /* SocialBeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E7FA3250AB1AC009524A2 /* SocialBeerUITests.swift */; };
+		50744BA1250D550600630FC6 /* BeerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50744BA0250D550600630FC6 /* BeerFactory.swift */; };
 		50EB7E22250C9C5100AB4F1B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 50EB7E21250C9C5100AB4F1B /* SDWebImageSwiftUI */; };
 		50EB7E25250C9F5100AB4F1B /* BeerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E24250C9F5100AB4F1B /* BeerCell.swift */; };
 		50EB7E27250CA0DA00AB4F1B /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB7E26250CA0DA00AB4F1B /* BeerList.swift */; };
@@ -62,6 +63,7 @@
 		500E7F9F250AB1AC009524A2 /* SocialBeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialBeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		500E7FA3250AB1AC009524A2 /* SocialBeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialBeerUITests.swift; sourceTree = "<group>"; };
 		500E7FA5250AB1AC009524A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50744BA0250D550600630FC6 /* BeerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerFactory.swift; sourceTree = "<group>"; };
 		50EB7E24250C9F5100AB4F1B /* BeerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCell.swift; sourceTree = "<group>"; };
 		50EB7E26250CA0DA00AB4F1B /* BeerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
 		50EB7E28250CA19100AB4F1B /* BeerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetails.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				50EB7E2F250CD94400AB4F1B /* ShareBeerButton.swift */,
 				50EB7E39250CE86E00AB4F1B /* BeerService.swift */,
 				50EB7E3B250CE87A00AB4F1B /* BeerRepository.swift */,
+				50744BA0250D550600630FC6 /* BeerFactory.swift */,
 			);
 			path = BeerList;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			files = (
 				50EB7E30250CD94400AB4F1B /* ShareBeerButton.swift in Sources */,
 				500E7F82250AB1AA009524A2 /* AppDelegate.swift in Sources */,
+				50744BA1250D550600630FC6 /* BeerFactory.swift in Sources */,
 				50EB7E2C250CA21E00AB4F1B /* CircledImage.swift in Sources */,
 				500E7F84250AB1AA009524A2 /* SceneDelegate.swift in Sources */,
 				50EB7E3E250CE89500AB4F1B /* APIDescription.swift in Sources */,

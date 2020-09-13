@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct APIDescription {
+    var url: String
+}
