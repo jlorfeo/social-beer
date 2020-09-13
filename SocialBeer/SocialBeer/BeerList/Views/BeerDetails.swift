@@ -35,7 +35,9 @@ struct BeerDetails: View {
                             self.shareBeer = true
                         })
                         .sheet(isPresented: $shareBeer, content: {
-                            ActivityView(activityItems: [self.beer.name] as [Any], applicationActivities: nil)
+                            ActivityView(
+                                activityItems: ["Lets drink \(self.beer.name) together!"] as [Any],
+                                applicationActivities: nil)
                         })
                         .padding()
                         Text(beer.description)
