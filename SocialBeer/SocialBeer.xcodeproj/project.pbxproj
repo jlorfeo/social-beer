@@ -139,6 +139,7 @@
 		500E7F80250AB1AA009524A2 /* SocialBeer */ = {
 			isa = PBXGroup;
 			children = (
+				50EB7E3D250CE89500AB4F1B /* APIDescription.swift */,
 				50EB7E2A250CA20D00AB4F1B /* Helping Views */,
 				50EB7E23250C9F3F00AB4F1B /* BeerList */,
 				500E7F81250AB1AA009524A2 /* AppDelegate.swift */,
@@ -148,7 +149,6 @@
 				500E7F8C250AB1AB009524A2 /* LaunchScreen.storyboard */,
 				500E7F8F250AB1AB009524A2 /* Info.plist */,
 				500E7F89250AB1AB009524A2 /* Preview Content */,
-				50EB7E3D250CE89500AB4F1B /* APIDescription.swift */,
 			);
 			path = SocialBeer;
 			sourceTree = "<group>";
