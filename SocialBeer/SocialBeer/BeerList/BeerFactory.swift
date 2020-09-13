@@ -10,7 +10,6 @@ import Foundation
 
 /// Builds the viewModel and its required dependencies
 protocol BeerFactory {
-    /// Returns the viewModel for the BeerListView
     func viewModel() -> BeerListViewModel
 }
 

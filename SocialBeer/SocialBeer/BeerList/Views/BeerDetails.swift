@@ -23,7 +23,9 @@ struct BeerDetails: View {
                 .allowsHitTesting(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
             ScrollView(.vertical) {
                 VStack {
+                    // MARK: - BeerImage
                     CircledWebImage(imageUrl: beer.image_url , frame: Frame(width: 250, height: 250))
+                    // MARK: - Name and Description
                     VStack {
                         Text(beer.name)
                             .font(.largeTitle)
@@ -41,6 +43,7 @@ struct BeerDetails: View {
                             .padding()
                             .fixedSize(horizontal: false, vertical: true)
                     }
+                    // MARK: - Attributes
                     DescriptionCell(header: "ABV", value: "\(beer.abv ?? 0)")
                     DescriptionCell(header: "PH", value: "\(beer.ph ?? 0)")
                     DescriptionCell(header: "Bitterness", value: "\(beer.bitterness?.rawValue ?? "Not calculated")")
@@ -60,6 +63,8 @@ struct BeerDetails: View {
                 self.wasShaken = true
             }
         }
+        // Workaround for NavigationBar Bug in SwiftUI that displays the navigation wrong
+        // Described on: https://bit.ly/2Ro0kde
         .navigationBarTitle(Text(beer.name), displayMode: .inline)
     }
 }
