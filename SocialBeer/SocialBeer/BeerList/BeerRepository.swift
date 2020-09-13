@@ -10,7 +10,7 @@ import Combine
 import Foundation
 
 class BeerRepository {
-    @Published var currentBeer: [Beer] = []
+    @Published private var currentBeers: [Beer] = []
     private var page = 0
     private var subscriptions: Set<AnyCancellable> = []
     private var description: APIDescription
@@ -29,13 +29,13 @@ class BeerRepository {
                     print(error.localizedDescription)
                 }
             }, receiveValue: { beers in
-                self.currentBeer = beers
+                self.currentBeers = beers
             })
             .store(in: &subscriptions)
     }
 
-    func currentDataPublisher() -> AnyPublisher<[Beer], Never> {
-        $currentBeer
+    func currentBeersPublisher() -> AnyPublisher<[Beer], Never> {
+        $currentBeers
             .receive(on: RunLoop.main)
             .map { $0 }
             .eraseToAnyPublisher()
@@ -46,7 +46,7 @@ class BeerRepository {
         // Increase API page count & add page parameter
         page += 1
         let tmpURL = url.appending("?page=\(page)")
-        
+
         return URLSession.shared
             .dataTaskPublisher(for: URL(string: tmpURL)!)
             .tryMap { element -> Data in

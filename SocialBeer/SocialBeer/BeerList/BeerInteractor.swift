@@ -10,8 +10,11 @@ import Combine
 import Foundation
 
 protocol BeerInteractor {
+    /// Repository that calls the API described in the API description
     var repository: BeerRepository { get }
+    /// Returns the retrieved beers as a publisher
     func beerPublisher() -> AnyPublisher<[Beer], Never>
+    /// Triggers loading of beers
     func fetchBeers()
 }
 
@@ -23,7 +26,7 @@ class BeerInteractorImpl: BeerInteractor {
     }
 
     func beerPublisher() -> AnyPublisher<[Beer], Never> {
-        repository.currentDataPublisher()
+        repository.currentBeersPublisher()
     }
 
     func fetchBeers() {
