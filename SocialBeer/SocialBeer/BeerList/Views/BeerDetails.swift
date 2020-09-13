@@ -54,11 +54,12 @@ struct BeerDetails: View {
                         })
                     }
                 }
+                .padding(.top)
             }
             .onReceive(messagePublisher) { _ in
                 self.wasShaken = true
             }
-
         }
+        .navigationBarTitle(Text(beer.name), displayMode: .inline)
     }
 }

@@ -13,7 +13,7 @@ struct BeerLocationView: View {
     var body: some View {
         NavigationView {
             MapView()
-                .navigationBarTitle("Where to drink it")
+                .navigationBarTitle("Where to find me")
                 .navigationBarItems(trailing: Button("Close", action: {
                     self.isMapPresented.toggle()
                 }))

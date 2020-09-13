@@ -13,7 +13,7 @@ class BeerListViewModel: ObservableObject {
     @Published var beers: [Beer] = []
 
     private var subscriptions: Set<AnyCancellable> = []
-    var beerInteractor: BeerInteractor
+    private var beerInteractor: BeerInteractor
 
     init(beerInteractor: BeerInteractor) {
         self.beerInteractor = beerInteractor
