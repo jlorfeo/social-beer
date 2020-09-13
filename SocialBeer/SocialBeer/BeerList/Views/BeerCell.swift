@@ -25,10 +25,3 @@ struct BeerCell: View {
         }
     }
 }
-
-//struct BeerCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BeerCell()
-//            .previewLayout(.fixed(width: 320, height: 100))
-//    }
-//}

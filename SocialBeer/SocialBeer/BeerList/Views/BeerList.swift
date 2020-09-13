@@ -45,6 +45,7 @@ struct BeerList: View {
             }
             .navigationBarTitle("Social Beer")
         }
+        // Needed for correct presentation on iPads
         .phoneOnlyStackNavigationView()
         .onAppear(perform: {
             self.viewModel.fetchBeers()

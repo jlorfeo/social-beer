@@ -18,6 +18,7 @@ struct BeerDetails: View {
 
     var body: some View {
         ZStack {
+            // Overlay that enables the shake gesture to be recognized
             ShakableViewRepresentable()
                 .allowsHitTesting(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
             ScrollView(.vertical) {
@@ -58,19 +59,6 @@ struct BeerDetails: View {
                 self.wasShaken = true
             }
 
-        }
-    }
-}
-
-struct BeerLocationView: View {
-    @Binding var isMapPresented: Bool
-    var body: some View {
-        NavigationView {
-            MapView()
-                .navigationBarTitle("Where to drink it")
-                .navigationBarItems(trailing: Button("Close", action: {
-                    self.isMapPresented.toggle()
-                }))
         }
     }
 }

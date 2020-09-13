@@ -8,7 +8,11 @@
 
 import Foundation
 
-class BeerFactory {
+protocol BeerFactory {
+    func viewModel() -> BeerListViewModel
+}
+
+class BeerFactoryImpl: BeerFactory {
     func viewModel() -> BeerListViewModel {
         BeerListViewModel(
             beerInteractor: interactor()
@@ -16,7 +20,7 @@ class BeerFactory {
     }
 
     private func interactor() -> BeerInteractor {
-        BeerInteractor(repository: repository())
+        BeerInteractorImpl(repository: repository())
     }
 
     private func repository() -> BeerRepository {

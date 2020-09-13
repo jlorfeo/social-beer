@@ -41,9 +41,12 @@ class BeerRepository {
             .eraseToAnyPublisher()
     }
 
+    // TBD: Moving to APIDescription?
     private func fetch(url: String) -> AnyPublisher<[Beer], Error> {
+        // Increase API page count & add page parameter
         page += 1
         let tmpURL = url.appending("?page=\(page)")
+        
         return URLSession.shared
             .dataTaskPublisher(for: URL(string: tmpURL)!)
             .tryMap { element -> Data in

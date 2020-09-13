@@ -17,7 +17,7 @@ class BeerListViewModel: ObservableObject {
 
     init(beerInteractor: BeerInteractor) {
         self.beerInteractor = beerInteractor
-        beerInteractor.beerPublisher
+        beerInteractor.beerPublisher()
             .sink(receiveValue: { beers in
                 self.beers.append(contentsOf: beers)
             })
